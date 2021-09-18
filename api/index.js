@@ -8,10 +8,10 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 
-const port = 3001//process.env.PORT;
+const port = process.env.PORT;
 const connectionString = process.env.DB_CONNECTION_STRING;
 
- mongoose.connect('mongodb+srv://emmanuel:Emmanuel123@netflix-cluster.pxngm.mongodb.net/netflix?retryWrites=true&w=majority', {
+ mongoose.connect(process.env.DB_CONNECTION_STRING, {
      useNewUrlParser: true,
      useUnifiedTopology: true,
     })
